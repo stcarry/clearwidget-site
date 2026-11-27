@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ClearWidget 개인정보처리방침</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<h1>ClearWidget 개인정보처리방침</h1>
+<p class="muted">시행일 2026년 11월 27일</p>
+<p>ClearWidget(이하 "앱")은 개인이 만들어 자기 Mac에서 쓰는 데스크톱 위젯 앱입니다. 이 문서는 앱이 어떤 정보를 다루는지 설명합니다. 앱은 <strong>자체 서버를 운영하지 않으며</strong>, 개발자가 사용자의 정보를 수집하거나 받아 볼 수 있는 경로가 없습니다.</p>
+
+<h2>1. 앱이 읽는 정보</h2>
+<table>
+<tr><th>기능</th><th>읽는 정보</th><th>가는 곳</th></tr>
+<tr><td>Google 캘린더 연결</td><td>사용자의 Google 캘린더 목록과 일정(제목, 시간, 장소, 참석 응답, 화상회의 링크). 읽기 전용 권한(<code>calendar.readonly</code>)과 계정 이메일 확인 권한만 요청합니다.</td><td>Google API(googleapis.com)에서 사용자의 Mac으로 내려받습니다. 다른 곳으로 보내지 않습니다.</td></tr>
+<tr><td>macOS 캘린더·미리 알림</td><td>사용자가 허용한 경우 Mac의 캘린더 일정</td><td>Mac 안에서만 사용</td></tr>
+<tr><td>날씨</td><td>선택한 도시 또는 위치 서비스를 허용한 경우 Mac의 위치(약 1km로 반올림)와 시간대</td><td>Apple 날씨(WeatherKit) 또는 Open-Meteo 날씨 서비스</td></tr>
+<tr><td>그 밖의 위젯</td><td>클립보드, 메모, 습관 기록, AI 도구의 사용량 기록(토큰 수·모델·시각·프로젝트 폴더 이름) 등 위젯이 보여 주는 데이터</td><td>Mac 안에서만 사용</td></tr>
+</table>
+
+<h2>2. 저장 방식</h2>
+<ul>
+<li>Google 로그인 정보(갱신 토큰, 접근 토큰, 클라이언트 보안 비밀번호)는 Mac의 <strong>키체인</strong>에만 저장합니다.</li>
+<li>가져온 일정은 위젯을 빠르게 보여 주려고 Mac의 앱 데이터 폴더에 임시 사본으로 저장합니다. 연결을 해제하면 이 사본과 키체인 항목을 지우고, Google에 토큰 폐기를 요청합니다.</li>
+<li>위젯 배치, 설정, 메모 등 모든 앱 데이터는 Mac의 <code>~/Library/Application Support/ClearWidget/</code>에만 있습니다.</li>
+</ul>
+
+<h2>3. 공유와 제3자 제공</h2>
+<p>앱은 Google 사용자 데이터를 포함한 어떤 정보도 판매하거나 광고, 분석, 프로파일링에 쓰지 않으며, 제3자에게 제공하지 않습니다. 사람이 일정 내용을 읽을 수 있는 경로도 없습니다. 날씨 서비스에는 위치(반올림한 좌표)와 시간대만 보냅니다.</p>
+
+<h2>4. Google API 서비스 사용자 데이터 정책</h2>
+<p>ClearWidget이 Google API에서 받은 정보를 다른 앱으로 옮기거나 쓰는 일은 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>(제한적 사용 요구사항 포함)을 따릅니다. 받은 일정은 사용자에게 위젯으로 보여 주는 용도로만 쓰입니다.</p>
+
+<h2>5. 연결 해제와 삭제</h2>
+<ul>
+<li>앱의 설정 › 계정에서 "연결 해제"를 누르면 앱 쪽의 토큰과 일정 사본이 지워집니다.</li>
+<li>Google 계정의 <a href="https://myaccount.google.com/permissions">보안 › 서드 파티 앱 및 서비스</a>에서도 언제든 접근 권한을 취소할 수 있습니다.</li>
+<li>앱을 지우고 위의 데이터 폴더를 삭제하면 앱이 가진 모든 데이터가 사라집니다.</li>
+</ul>
+
+<h2>6. 문의</h2>
+<p>이 방침에 대한 문의는 이 사이트 저장소의 <a href="https://github.com/stcarry/clearwidget-site/issues">GitHub 이슈</a>로 남겨 주세요. 방침이 바뀌면 이 페이지에 시행일과 함께 게시합니다.</p>
+<nav><a href="index.html">← ClearWidget 소개</a></nav>
+</main></body></html>
